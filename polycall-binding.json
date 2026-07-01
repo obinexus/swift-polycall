@@ -1,0 +1,11 @@
+{
+  "name": "swift-polycall",
+  "version": "1.5.0",
+  "language": "Swift",
+  "adapter": true,
+  "ffi": true,
+  "config": "swift-polycallrc",
+  "core": "../../src",
+  "license": "MIT OBINexus",
+  "author": "Nnamdi Michael Okpala"
+}
