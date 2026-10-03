@@ -1,0 +1,15 @@
+# QA descriptor for the Polycall binding matrix (read by polycall/qa/run_qa.py).
+# This repository is NOT a Python package and is not pip-installable;
+# its native manifest is Package.swift.
+[tool.polycall.binding]
+name = "swift-polycall"
+language = "Swift"
+native_manifest = "Package.swift"
+registry = "none"
+package = ""
+abi = 1
+support = "supported"
+linux_image = "swift:6.0"
+build = "swift build"
+test = "sh tests/run-real-core.sh"
+windows_test = ""

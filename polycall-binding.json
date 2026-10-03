@@ -4,8 +4,12 @@
   "language": "Swift",
   "adapter": true,
   "ffi": true,
+  "entry_point": "polycall_ffi_run_config",
   "config": "swift-polycallrc",
-  "core": "../../src",
-  "license": "MIT OBINexus",
+  "native_manifest": "Package.swift",
+  "core": "polycall >= 1.1.0 (binding ABI 1)",
+  "core_repository": "https://github.com/obinexus/polycall",
+  "repository": "https://github.com/obinexus/swift-polycall",
+  "license": "MIT",
   "author": "Nnamdi Michael Okpala"
 }

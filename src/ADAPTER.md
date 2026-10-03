@@ -1,8 +1,15 @@
-# Swift adapter (scaffold)
+# Swift adapter
 
-Implement the Swift adapter here. It must call across the FFI boundary only:
+- `CPolycall/` — SwiftPM system-library target. Its module map imports the
+  core's installed `<polycall.h>` and links `polycall`; flags come from
+  `pkg-config polycall`. No declarations are copied or generated.
+- `Polycall/` — the Swift API. Each method calls exactly one C function of the
+  binding ABI v1 (or two, when a too-small output buffer must be resized) and
+  converts its status into `PolycallError` (status, `polycall_strerror` name,
+  `polycall_last_error` detail).
 
-    status = polycall_ffi_run_config("swift-polycallrc", /*run=*/1)
+The documented entry point is unchanged:
 
-Return/raise a Swift-native error when `status` is non-zero. Do not parse
-config or duplicate any core logic. See ../../../docs/adapter-pattern.md.
+    try Polycall.runConfig("swift-polycallrc")   // polycall_ffi_run_config(path, 1)
+
+Do not parse config or duplicate any core logic here.

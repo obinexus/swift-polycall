@@ -1,8 +1,10 @@
-# swift-polycallrc - read-only Swift runtime overrides for libpolycall
+# swift-polycallrc - read-only Swift runtime overrides for Polycall
 #
-# This file uses the SHARED polycall schema (src/config/polycall_config_schema.c).
-# It introduces no new keys or parser: the Swift adapter passes this path to
-# the core via the FFI boundary. Values here override polycallrc for Swift.
+# This file uses the SHARED Polycall configuration grammar: the core validates
+# it exactly as `polycall config validate` does, through
+# polycall_ffi_run_config(path, run) (Polycall.runConfig in Swift). It
+# introduces no new keys or parser: the Swift adapter only passes this path to
+# the core across the FFI boundary. Values here override polycallrc for Swift.
 
 log_level=info
 max_connections=1000
